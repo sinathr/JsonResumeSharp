@@ -24,6 +24,7 @@ namespace JsonResumeSharp.Utils.Extentions
 
 
 
+
         }
 
         public static JsonResume AddEducation(this JsonResume jsonResume, Education education)
