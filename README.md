@@ -1,2 +1,2 @@
 # JsonResumeSharp
-A library
+A library for converting Json Resume to C# object and the reverse
