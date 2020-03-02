@@ -21,6 +21,9 @@ namespace JsonResumeSharp.Utils.Extentions
             Utilities.AddItemToArray(jsonResume.Volunteer, volunteer);
             return jsonResume;
 
+
+
+
         }
 
         public static JsonResume AddEducation(this JsonResume jsonResume, Education education)
