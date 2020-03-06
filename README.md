@@ -17,7 +17,7 @@ To install JsonResumeSharp just execute the following command in your nuget CLI 
 ```bash
 Install-Package JsonResumeSharp -Version 1.0.0
 ```
-###Usage
+### Usage
 To use the JsonResumeSharp do these steps: 
 1. import JsonResumeSharp namespaces to your project:
 ```C#
@@ -42,7 +42,7 @@ string jsonString = jsonResume.ToJson();
 ```
 And now every thing is done.
 
-###Other Features
+### Other Features
 You can also create the JsonResume object from a jsonString:
 ```C#
 JsonResume jsonResume = JsonResume.FromJson(jsonString);
