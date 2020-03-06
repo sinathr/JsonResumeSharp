@@ -43,7 +43,7 @@ string jsonString = jsonResume.ToJson();
 And now every thing is done.
 
 ### Other Features
-You can also create the JsonResume object from a jsonString:
+You can also create the JsonResume object from a json string:
 ```C#
 JsonResume jsonResume = JsonResume.FromJson(jsonString);
 ```
