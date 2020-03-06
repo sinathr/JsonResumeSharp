@@ -15,7 +15,7 @@ An open source library for creating and manipulating [Json Resume](http://jsonre
 To install JsonResumeSharp just execute the following command in your nuget CLI :
 
 ```bash
-Install-Package JsonResumeSharp -Version 1.0.0-b1
+Install-Package JsonResumeSharp -Version 1.0.0
 ```
 ###Usage
 To use the JsonResumeSharp do these steps: 

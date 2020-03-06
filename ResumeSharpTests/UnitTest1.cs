@@ -16,7 +16,7 @@ namespace ResumeSharpTests
                  .AddEducation(new Education())
                  .AddPublication(new Publication());
 
-            JsonResume jsonResume = JsonResume.FromJson(jsonString);
+          //  JsonResume jsonResume = JsonResume.FromJson(jsonString);
 
             Assert.AreEqual(jsonResume.Works.Count, 1);
         }
