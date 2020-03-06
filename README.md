@@ -1,41 +1,53 @@
 # JsonResumeSharp
 
-An open source library for dealing with [Json Resume]("http://jsonresume.org") object in C#
+An open source library for creating and manipulating [Json Resume](http://jsonresume.org/scheme "Json Resume") object in C#
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
 
 ### Prerequisites
 
-.Net Standar 2.0
+.NET Standard 2.0 or higher
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+To install JsonResumeSharp just execute the following command in your nuget CLI :
 
-Say what the step will be
-
+```bash
+Install-Package JsonResumeSharp -Version 1.0.0-b1
 ```
-Give the example
+###Usage
+To use the JsonResumeSharp do these steps: 
+1. import JsonResumeSharp namespaces to your project:
+```C#
+using using JsonResumeSharp;
+using JsonResumeSharp.Utils.Extentions;
 ```
-
-And repeat
-
+2. Create a new instance of JsonResume:
+```C#
+ JsonResume jsonResume = new JsonResume();
 ```
-until finished
+3. Add your background to it:
+```C#
+jsonResume.AddAward(new Award())
+                .AddWork(new Work())
+                .AddEducation(new Education())
+                .AddPublication(new Publication)
+                ...
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-
+4. Convert your object easily to a json string:
+```C#
+string jsonString = jsonResume.ToJson();
+```
+And now every thing is done.
+###Other features
+You can also create the JsonResume object from a jsonString:
+```C#
+JsonResume jsonResume = JsonResume.FromJson(jsonString);
+```
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc

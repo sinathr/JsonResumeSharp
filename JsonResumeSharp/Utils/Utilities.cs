@@ -1,5 +1,4 @@
-﻿using QuickType;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +7,14 @@ namespace JsonResumeSharp.Utils
 {
     class Utilities
     {
-        public static void  AddItemToArray<T>(T[] array, T item)
+        public static void  AddItemToList<T>(List<T> list, T item)
         {
+            if (list == null)
+                list = new List<T>();
             
-            var list = array.ToList();
+
             list.Add(item);
-            array = list.ToArray();
+            
            
         }
     }

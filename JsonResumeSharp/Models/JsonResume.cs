@@ -6,7 +6,7 @@
 //
 //    var jsonResume = JsonResume.FromJson(jsonString);
 
-namespace QuickType
+namespace JsonResumeSharp
 {
     using System;
     using System.Collections.Generic;
@@ -15,37 +15,40 @@ namespace QuickType
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
+    /// <summary>
+    /// The JsonResume object based on https://jsonresume.org/schema/
+    /// </summary>
     public partial class JsonResume
     {
         [JsonProperty("basics")]
         public Basics Basics { get; set; }
 
         [JsonProperty("work")]
-        public Work[] Work { get; set; }
+        public List<Work> Works { get; set; }
 
         [JsonProperty("volunteer")]
-        public Volunteer[] Volunteer { get; set; }
+        public List<Volunteer> Volunteers { get; set; }
 
         [JsonProperty("education")]
-        public Education[] Education { get; set; }
+        public List<Education> Educations { get; set; }
 
         [JsonProperty("awards")]
-        public Award[] Awards { get; set; }
+        public List<Award> Awards { get; set; }
 
         [JsonProperty("publications")]
-        public Publication[] Publications { get; set; }
+        public List<Publication> Publications { get; set; }
 
         [JsonProperty("skills")]
-        public Skill[] Skills { get; set; }
+        public List<Skill> Skills { get; set; }
 
         [JsonProperty("languages")]
-        public Language[] Languages { get; set; }
+        public List<Language> Languages { get; set; }
 
         [JsonProperty("interests")]
-        public Interest[] Interests { get; set; }
+        public List<Interest> Interests { get; set; }
 
         [JsonProperty("references")]
-        public Reference[] References { get; set; }
+        public List<Reference> References { get; set; }
     }
 
     public partial class Award
@@ -90,7 +93,7 @@ namespace QuickType
         public Location Location { get; set; }
 
         [JsonProperty("profiles")]
-        public Profile[] Profiles { get; set; }
+        public List<Profile> Profiles { get; set; }
     }
 
     public partial class Location
@@ -144,7 +147,7 @@ namespace QuickType
         public string Gpa { get; set; }
 
         [JsonProperty("courses")]
-        public string[] Courses { get; set; }
+        public List<string> Courses { get; set; }
     }
 
     public partial class Interest
@@ -153,7 +156,7 @@ namespace QuickType
         public string Name { get; set; }
 
         [JsonProperty("keywords")]
-        public string[] Keywords { get; set; }
+        public List<string> Keywords { get; set; }
     }
 
     public partial class Language
@@ -201,7 +204,7 @@ namespace QuickType
         public string Level { get; set; }
 
         [JsonProperty("keywords")]
-        public string[] Keywords { get; set; }
+        public List<string> Keywords { get; set; }
     }
 
     public partial class Volunteer
@@ -225,7 +228,7 @@ namespace QuickType
         public string Summary { get; set; }
 
         [JsonProperty("highlights")]
-        public string[] Highlights { get; set; }
+        public List<string> Highlights { get; set; }
 
         [JsonProperty("company", NullValueHandling = NullValueHandling.Ignore)]
         public string Company { get; set; }
@@ -252,7 +255,7 @@ namespace QuickType
         public string Summary { get; set; }
 
         [JsonProperty("highlights")]
-        public string[] Highlights { get; set; }
+        public List<string> Highlights { get; set; }
 
         [JsonProperty("company", NullValueHandling = NullValueHandling.Ignore)]
         public string Company { get; set; }
@@ -260,12 +263,22 @@ namespace QuickType
 
     public partial class JsonResume
     {
-        public static JsonResume FromJson(string json) => JsonConvert.DeserializeObject<JsonResume>(json, QuickType.Converter.Settings);
+        /// <summary>
+        /// Create a JsonResume object from json string
+        /// </summary>
+        /// <param name="json">the json string</param>
+        /// <returns></returns>
+        public static JsonResume FromJson(string json) => JsonConvert.DeserializeObject<JsonResume>(json, Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this JsonResume self) => JsonConvert.SerializeObject(self, QuickType.Converter.Settings);
+        /// <summary>
+        /// Convert the JsonResume object to json
+        /// </summary>
+        /// <param name="self"></param>
+        /// <returns></returns>
+        public static string ToJson(this JsonResume self) => JsonConvert.SerializeObject(self, Converter.Settings);
     }
 
     internal static class Converter
