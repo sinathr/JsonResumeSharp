@@ -41,7 +41,8 @@ jsonResume.AddAward(new Award())
 string jsonString = jsonResume.ToJson();
 ```
 And now every thing is done.
-###Other features
+
+###Other Features
 You can also create the JsonResume object from a jsonString:
 ```C#
 JsonResume jsonResume = JsonResume.FromJson(jsonString);
