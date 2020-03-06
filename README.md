@@ -1,6 +1,6 @@
 # JsonResumeSharp
 
-An open source library for creating and manipulating [Json Resume](http://jsonresume.org/scheme "Json Resume") object in C#
+An open source library for creating and manipulating [Json Resume](https://jsonresume.org/schema/ "Json Resume") object in C#
 
 ## Getting Started
 
